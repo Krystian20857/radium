@@ -18,6 +18,9 @@ include = ["src/**/*.rs", "Cargo.toml", "README.md", "LICENSE.txt", "build.rs"]
 
 edition = "2018"
 
+[features]
+esp32 = []
+
 [dependencies]
 
 [dev-dependencies]

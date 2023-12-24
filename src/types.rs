@@ -48,12 +48,14 @@ pub type RadiumU32 = if_atomic! {
 };
 
 /// Best-effort atomic `i64` type.
+#[cfg(not(feature = "esp32"))]
 pub type RadiumI64 = if_atomic! {
     if atomic(64) { core::sync::atomic::AtomicI64 }
     else { core::cell::Cell<i64> }
 };
 
 /// Best-effort atomic `u64` type.
+#[cfg(not(feature = "esp32"))]
 pub type RadiumU64 = if_atomic! {
     if atomic(64) { core::sync::atomic::AtomicU64 }
     else { core::cell::Cell<u64> }
